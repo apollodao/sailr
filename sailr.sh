@@ -70,14 +70,14 @@ function build_regex() {
 function print_error() {
   commit_message=$1
   regular_expression=$2
-  echo -e "\n\e[31m[Invalid Commit Message]"
-  echo -e "------------------------\033[0m\e[0m"
-  echo -e "Valid types: \e[36m${types[@]}\033[0m"
-  echo -e "Max length (first line): \e[36m$max_length\033[0m"
-  echo -e "Min length (first line): \e[36m$min_length\033[0m\n"
-  echo -e "\e[37mRegex: \e[33m$regular_expression\033[0m"
-  echo -e "\e[37mActual commit message: \e[33m\"$commit_message\"\033[0m"
-  echo -e "\e[37mActual length: \e[33m$(echo $commit_message | wc -c)\033[0m\n"
+  echo -e "[Invalid Commit Message]"
+  echo -e "------------------------"
+  echo -e "Valid types: ${types[@]}"
+  echo -e "Max length (first line): $max_length"
+  echo -e "Min length (first line): $min_length"
+  echo -e "Regex: $regular_expression"
+  echo -e "Actual commit message: $commit_message"
+  echo -e "Actual length: $(echo $commit_message | wc -c)"
 }
 
 set_config
